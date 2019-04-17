@@ -1,0 +1,50 @@
+{
+  "name": "idyllic",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "formik": "^1.5.1",
+    "glamorous-native": "^1.4.2",
+    "graphql": "^14.1.1",
+    "react": "16.8.3",
+    "react-native": "^0.59.2",
+    "react-native-gesture-handler": "^1.1.0",
+    "react-native-pose": "^0.9.0",
+    "react-native-responsive-screen": "^1.2.1",
+    "react-native-vector-icons": "6.4.2",
+    "react-navigation": "^3.3.2",
+    "react-redux": "^6.0.1",
+    "redux": "^4.0.1",
+    "sendbird": "^3.0.97"
+  },
+  "devDependencies": {
+    "@babel/core": "7.3.4",
+    "@babel/runtime": "7.3.4",
+    "acorn": "^6.1.1",
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.5.0",
+    "babel-preset-flow": "^6.23.0",
+    "eslint": "^5.15.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-flowtype": "^3.4.2",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "flow-bin": "^0.94.0",
+    "jest": "24.5.0",
+    "jest-haste-map": "^24.5.0",
+    "metro-react-native-babel-preset": "0.53.0",
+    "prettier": "^1.16.4",
+    "react-test-renderer": "16.8.3"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
