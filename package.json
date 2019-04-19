@@ -10,7 +10,7 @@
     "formik": "^1.5.1",
     "glamorous-native": "^1.4.2",
     "graphql": "^14.1.1",
-    "react": "16.8.3",
+    "react": "^16.8.6",
     "react-native": "^0.59.2",
     "react-native-firebase": "^5.3.1",
     "react-native-gesture-handler": "^1.1.0",
@@ -18,13 +18,12 @@
     "react-native-responsive-screen": "^1.2.1",
     "react-native-vector-icons": "6.4.2",
     "react-navigation": "^3.3.2",
-    "react-redux": "^6.0.1",
-    "redux": "^4.0.1",
-    "sendbird": "^3.0.97"
+    "react-redux": "^7.0.2",
+    "redux": "^4.0.1"
   },
   "devDependencies": {
-    "@babel/core": "7.3.4",
-    "@babel/runtime": "7.3.4",
+    "@babel/core": "^7.4.3",
+    "@babel/runtime": "^7.4.3",
     "acorn": "^6.1.1",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^10.0.1",
@@ -38,12 +37,12 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
-    "flow-bin": "^0.94.0",
-    "jest": "24.5.0",
+    "flow-bin": "^0.97.0",
+    "jest": "^24.7.1",
     "jest-haste-map": "^24.5.0",
-    "metro-react-native-babel-preset": "0.53.0",
+    "metro-react-native-babel-preset": "^0.53.1",
     "prettier": "^1.16.4",
-    "react-test-renderer": "16.8.3"
+    "react-test-renderer": "^16.8.6"
   },
   "jest": {
     "preset": "react-native"
