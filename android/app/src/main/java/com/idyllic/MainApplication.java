@@ -1,4 +1,4 @@
-package com.idyllic;
+package com.barronwei.idyllic;
 
 import android.app.Application;
 

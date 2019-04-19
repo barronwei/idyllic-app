@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "251987962233",
+    "firebase_url": "https://idyllic-i.firebaseio.com",
+    "project_id": "idyllic-i",
+    "storage_bucket": "idyllic-i.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:251987962233:android:bf76cec17347972c",
+        "android_client_info": {
+          "package_name": "com.barronwei.idyllic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "251987962233-6he23i4qusfoalpjqskdonh697ljpgo4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6nyJw8SyW4GrS-1I4FoHjVuGpe2xaTGo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "251987962233-6he23i4qusfoalpjqskdonh697ljpgo4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "251987962233-2g7fcthpu25gnaqlrica9bo315t4atp4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.barronwei.idyllic"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

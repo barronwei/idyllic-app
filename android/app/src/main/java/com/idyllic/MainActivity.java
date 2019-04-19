@@ -1,4 +1,4 @@
-package com.idyllic;
+package com.barronwei.idyllic;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
