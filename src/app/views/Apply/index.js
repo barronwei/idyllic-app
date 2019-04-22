@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { navigate } from '../../services/navigation'
-import { Container, Title, Words } from './styles'
+import { Container, Title } from './styles'
+import Form from './build'
 
 export default class Apply extends Component {
   tackle = () => {
@@ -10,7 +11,7 @@ export default class Apply extends Component {
     return (
       <Container>
         <Title>Sign Up</Title>
-        <Words onPress={this.tackle}>Sign Up</Words>
+        <Form />
       </Container>
     )
   }

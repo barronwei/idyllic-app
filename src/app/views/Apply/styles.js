@@ -17,3 +17,8 @@ export const Words = glamorous.text({
   margin: 10,
   textAlign: 'center'
 })
+
+export const Input = glamorous.textInput({
+  margin: 10,
+  textAlign: 'center'
+})
