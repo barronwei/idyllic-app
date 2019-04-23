@@ -15,10 +15,10 @@ export function hp(p) {
   return PixelRatio.roundToNearestPixel((h * eh) / 100)
 }
 
-export function lor(i) {
-  Dimensions.addEventListener('change', dimensions => {
-    w = dimensions.window.width
-    h = dimensions.window.height
+export function lo(i) {
+  Dimensions.addEventListener('change', d => {
+    w = d.window.width
+    h = d.window.height
     i.setState({
       orientation: w < h ? 'portrait' : 'landscape'
     })
