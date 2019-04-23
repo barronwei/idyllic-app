@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { navigate } from '../../services/navigation'
-import { Container, Title, Words } from './styles'
+import { Container, Title, Words } from '../../styles'
 
 export default class Open extends Component {
   signup = () => {

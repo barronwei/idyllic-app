@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Alert } from 'react-native'
 import firebase from 'react-native-firebase'
 import { navigate } from '../../services/navigation'
-import { Container, Title, Words } from './styles'
+import { Container, Title, Words } from '../../styles'
 
 export default class Home extends Component {
   componentDidMount() {
