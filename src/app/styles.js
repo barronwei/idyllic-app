@@ -1,8 +1,5 @@
 import glamorous from 'glamorous-native'
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp
-} from 'react-native-responsive-screen'
+import { wp, hp } from './services/visual'
 
 export const Container = glamorous.view({
   flex: 1,
@@ -24,8 +21,8 @@ export const Words = glamorous.text({
 
 export const Input = glamorous.textInput({
   margin: 15,
-  height: hp('4%'),
   width: wp('80%'),
+  height: hp('4%'),
   borderColor: 'gray',
   borderWidth: 1,
   textAlign: 'center'

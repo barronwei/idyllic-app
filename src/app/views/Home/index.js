@@ -1,5 +1,5 @@
 import { createAppContainer, createBottomTabNavigator } from 'react-navigation'
-import Iconize from '../../services/visual'
+import { Iconize } from '../../services/visual'
 import Home from './build'
 
 export default createAppContainer(
