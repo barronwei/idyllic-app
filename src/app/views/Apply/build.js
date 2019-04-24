@@ -8,13 +8,13 @@ export default class Form extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      user: '',
+      mail: '',
       pass: ''
     }
   }
-  submit = async (user, pass) => {
+  submit = async (mail, pass) => {
     try {
-      await firebase.auth().createUserWithEmailAndPassword(user, pass)
+      await firebase.auth().createUserWithEmailAndPassword(mail, pass)
       navigate('Home')
     } catch (error) {
       Alert.alert(error.message)
@@ -24,23 +24,24 @@ export default class Form extends Component {
     navigate('Open')
   }
   render() {
-    const { user, pass } = this.state
+    const { mail, pass } = this.state
     return (
       <React.Fragment>
         <Input
-          textContentType="username"
-          placeholder="username"
-          onChangeText={user => this.setState({ user })}
-          value={user}
+          placeholder="email"
+          textContentType="emailAddress"
+          keyboardType="email-address"
+          onChangeText={mail => this.setState({ mail })}
+          value={mail}
         />
         <Input
-          textContentType="password"
           placeholder="password"
+          textContentType="password"
+          secureTextEntry
           onChangeText={pass => this.setState({ pass })}
           value={pass}
-          secureTextEntry
         />
-        <Words onPress={() => this.submit(user, pass)}>Submit</Words>
+        <Words onPress={() => this.submit(mail, pass)}>Submit</Words>
         <Words onPress={this.return}>Return</Words>
       </React.Fragment>
     )
