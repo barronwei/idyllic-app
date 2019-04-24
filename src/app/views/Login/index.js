@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { navigate } from '../../services/navigation'
-import { Container, Title } from '../../styles'
+import { Holds, Title } from '../../styles'
 import Form from './build'
 
 export default class Login extends Component {
@@ -9,10 +9,10 @@ export default class Login extends Component {
   }
   render() {
     return (
-      <Container>
+      <Holds>
         <Title>Sign In</Title>
         <Form />
-      </Container>
+      </Holds>
     )
   }
 }

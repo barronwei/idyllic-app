@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
+import { Holds, Title, Words } from '../../styles'
 import { navigate } from '../../services/navigation'
-import { Container, Title, Words } from '../../styles'
 
 export default class Open extends Component {
   signup = () => {
@@ -11,11 +11,11 @@ export default class Open extends Component {
   }
   render() {
     return (
-      <Container>
+      <Holds>
         <Title>Welcome to Idyllic</Title>
         <Words onPress={this.signup}>Sign Up</Words>
         <Words onPress={this.signin}>Sign In</Words>
-      </Container>
+      </Holds>
     )
   }
 }

@@ -1,25 +1,25 @@
-import glamorous from 'glamorous-native'
+import styled from 'styled-components'
 import { wp, hp } from './services/visual'
 
-export const Container = glamorous.view({
+export const Holds = styled.View({
   flex: 1,
   justifyContent: 'center',
   alignItems: 'center',
   backgroundColor: '#FFFFFF'
 })
 
-export const Title = glamorous.text({
+export const Title = styled.Text({
   fontSize: 20,
   margin: 10,
   textAlign: 'center'
 })
 
-export const Words = glamorous.text({
+export const Words = styled.Text({
   margin: 10,
   textAlign: 'center'
 })
 
-export const Input = glamorous.textInput({
+export const Input = styled.TextInput({
   margin: 15,
   width: wp('80%'),
   height: hp('4%'),
