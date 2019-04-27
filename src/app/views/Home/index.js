@@ -1,37 +1,37 @@
-import { createAppContainer, createBottomTabNavigator } from 'react-navigation'
-import Home from './build'
+import { createBottomTabNavigator } from 'react-navigation'
+import Con from './Con'
+import Dun from './Dun'
+import Add from './Add'
 import { Iconize } from '../../services/visual'
 
-export default createAppContainer(
-  createBottomTabNavigator(
-    {
-      Profile: {
-        screen: Home,
-        navigationOptions: {
-          tabBarIcon: Iconize('person', 25)
-        }
-      },
-      Discover: {
-        screen: Home,
-        navigationOptions: {
-          tabBarIcon: Iconize('compass', 25)
-        }
-      },
-      Groups: {
-        screen: Home,
-        navigationOptions: {
-          tabBarIcon: Iconize('chatbubbles', 25)
-        }
+export default createBottomTabNavigator(
+  {
+    Settings: {
+      screen: Con,
+      navigationOptions: {
+        tabBarIcon: Iconize('cog', 25)
       }
     },
-    {
-      initialRouteName: 'Discover',
-      backBehavior: 'none',
-      tabBarOptions: {
-        showLabel: false,
-        activeTintColor: 'red',
-        inactiveTintColor: 'black'
+    Schedule: {
+      screen: Dun,
+      navigationOptions: {
+        tabBarIcon: Iconize('list', 25)
+      }
+    },
+    Addition: {
+      screen: Add,
+      navigationOptions: {
+        tabBarIcon: Iconize('add', 25)
       }
     }
-  )
+  },
+  {
+    initialRouteName: 'Schedule',
+    backBehavior: 'none',
+    tabBarOptions: {
+      showLabel: false,
+      activeTintColor: 'red',
+      inactiveTintColor: 'black'
+    }
+  }
 )

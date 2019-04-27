@@ -15,20 +15,6 @@ export function hp(p) {
   return PixelRatio.roundToNearestPixel((h * eh) / 100)
 }
 
-export function lo(i) {
-  Dimensions.addEventListener('change', d => {
-    w = d.window.width
-    h = d.window.height
-    i.setState({
-      orientation: w < h ? 'portrait' : 'landscape'
-    })
-  })
-}
-
-export function rol() {
-  Dimensions.removeEventListener('change', () => {})
-}
-
 export function Iconize(l, s) {
   return <Icon name={Platform.OS === 'ios' ? 'ios-' + l : 'md-' + l} size={s} />
 }

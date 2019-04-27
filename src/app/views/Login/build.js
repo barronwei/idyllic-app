@@ -15,7 +15,6 @@ export default class Form extends Component {
   submit = async (mail, pass) => {
     try {
       await firebase.auth().signInWithEmailAndPassword(mail, pass)
-      navigate('Home')
     } catch (error) {
       Alert.alert(error.message)
     }
