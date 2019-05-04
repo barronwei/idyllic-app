@@ -9,7 +9,7 @@ export default createBottomTabNavigator(
     Settings: {
       screen: Con,
       navigationOptions: {
-        tabBarIcon: Iconize('cog', 25)
+        tabBarIcon: Iconize('contact', 25)
       }
     },
     Schedule: {
@@ -21,7 +21,7 @@ export default createBottomTabNavigator(
     Addition: {
       screen: Add,
       navigationOptions: {
-        tabBarIcon: Iconize('add', 25)
+        tabBarIcon: Iconize('add-circle-outline', 25)
       }
     }
   },

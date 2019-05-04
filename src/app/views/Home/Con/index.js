@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
-import { Holds, Title, Words } from '../../../styles'
+import { Holds, Title } from '../../../styles'
 
-export default class Con extends Component {
+export default class Per extends Component {
   render() {
     return (
       <Holds>
-        <Title>Welcome to Settings</Title>
-        <Words>Now Started</Words>
+        <Title>Settings</Title>
       </Holds>
     )
   }
