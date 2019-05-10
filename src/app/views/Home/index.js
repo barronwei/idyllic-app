@@ -29,9 +29,7 @@ export default createBottomTabNavigator(
     initialRouteName: 'Schedule',
     backBehavior: 'none',
     tabBarOptions: {
-      showLabel: false,
-      activeTintColor: 'red',
-      inactiveTintColor: 'black'
+      showLabel: false
     }
   }
 )
