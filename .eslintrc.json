@@ -2,7 +2,6 @@
   "extends": [
     "airbnb",
     "eslint:recommended",
-    "plugin:flowtype/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:jsx-a11y/recommended",
@@ -13,7 +12,7 @@
     "jest": true
   },
   "parser": "babel-eslint",
-  "plugins": ["flowtype", "react-hooks"],
+  "plugins": ["react-hooks"],
   "rules": {
     "semi": ["error", "never"],
     "import/first": 0,
