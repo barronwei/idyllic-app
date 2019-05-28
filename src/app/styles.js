@@ -29,7 +29,7 @@ export const Title = styled.Text({
 })
 
 export const Words = styled.Text({
-  margin: 10
+  margin: 5
 })
 
 export const Input = styled.TextInput({
