@@ -28,6 +28,7 @@ export default createBottomTabNavigator(
   {
     initialRouteName: 'Schedule',
     backBehavior: 'none',
+    lazy: true,
     tabBarOptions: {
       showLabel: false
     }

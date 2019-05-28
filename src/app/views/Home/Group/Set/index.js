@@ -5,7 +5,7 @@ export default class Set extends Component {
   render() {
     return (
       <Holds>
-        <Title>Add Task</Title>
+        <Title>Settings</Title>
       </Holds>
     )
   }
