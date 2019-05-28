@@ -24,11 +24,13 @@ export default class Form extends Component {
       <React.Fragment>
         <Input
           placeholder="task"
+          textAlign="center"
           onChangeText={task => this.setState({ task })}
           value={task}
         />
         <Input
           placeholder="time"
+          textAlign="center"
           keyboardType="numeric"
           onChangeText={time => this.setState({ time })}
           value={time}

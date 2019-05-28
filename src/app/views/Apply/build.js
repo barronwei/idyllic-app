@@ -28,6 +28,7 @@ export default class Form extends Component {
       <React.Fragment>
         <Input
           placeholder="email"
+          textAlign="center"
           textContentType="emailAddress"
           keyboardType="email-address"
           onChangeText={mail => this.setState({ mail })}
@@ -35,6 +36,7 @@ export default class Form extends Component {
         />
         <Input
           placeholder="password"
+          textAlign="center"
           textContentType="password"
           secureTextEntry
           onChangeText={pass => this.setState({ pass })}
