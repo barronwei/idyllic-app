@@ -1,25 +1,25 @@
 import { createBottomTabNavigator } from 'react-navigation'
-import Con from './Con'
-import Dun from './Dun'
-import Add from './Add'
+import Group from './Group'
+import Focus from './Focus'
+import Cause from './Cause'
 import { Iconize } from '../../services/visual'
 
 export default createBottomTabNavigator(
   {
     Settings: {
-      screen: Con,
+      screen: Group,
       navigationOptions: {
         tabBarIcon: Iconize('contact', 25)
       }
     },
     Schedule: {
-      screen: Dun,
+      screen: Focus,
       navigationOptions: {
         tabBarIcon: Iconize('list', 25)
       }
     },
     Addition: {
-      screen: Add,
+      screen: Cause,
       navigationOptions: {
         tabBarIcon: Iconize('add-circle-outline', 25)
       }
