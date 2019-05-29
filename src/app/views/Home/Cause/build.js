@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { Alert } from 'react-native'
+import moment from 'moment'
 import { Input, Words } from '../../../styles'
-import { Slide } from '../../../services/build'
+import { Dater, Slide } from '../../../services/build'
 
 export default class Form extends Component {
   constructor(props) {
@@ -9,9 +10,32 @@ export default class Form extends Component {
     this.state = {
       task: '',
       time: '',
+      start: {
+        name: 'start',
+        show: false,
+        date: moment()
+      },
+      end: {
+        name: 'end',
+        show: false,
+        date: moment()
+      },
       prior: 3,
-      power: 50
+      power: 50,
+      parts: false
     }
+  }
+  viewer = t => {
+    this.setState({ [t.name]: { ...t, show: !t.show } })
+  }
+  select = (t, d) => {
+    this.setState({
+      [t.name]: {
+        ...t,
+        show: !t.show,
+        date: moment(d)
+      }
+    })
   }
   submit = async (task, time, prior, power) => {
     try {
@@ -21,10 +45,9 @@ export default class Form extends Component {
     }
   }
   render() {
-    const { task, time, prior, power } = this.state
-
+    const { task, time, start, end, prior, power } = this.state
     return (
-      <React.Fragment>
+      <Fragment>
         <Input
           placeholder="task"
           textAlign="center"
@@ -37,6 +60,20 @@ export default class Form extends Component {
           keyboardType="numeric"
           onChangeText={time => this.setState({ time })}
           value={time}
+        />
+        <Dater
+          value={start}
+          title="Start Date"
+          click={() => this.viewer(start)}
+          onConfirm={d => this.select(start, d)}
+          onCancel={() => this.viewer(start)}
+        />
+        <Dater
+          value={end}
+          title="End Date"
+          click={() => this.viewer(end)}
+          onConfirm={d => this.select(end, d)}
+          onCancel={() => this.viewer(end)}
         />
         <Words>Priority</Words>
         <Slide
@@ -57,7 +94,7 @@ export default class Form extends Component {
         <Words onPress={() => this.submit(task, time, prior, power)}>
           Submit
         </Words>
-      </React.Fragment>
+      </Fragment>
     )
   }
 }
