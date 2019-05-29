@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import { Alert } from 'react-native'
 import moment from 'moment'
-import { Input, Words } from '../../../styles'
-import { Dater, Slide } from '../../../services/build'
+import { Words, Input } from '../../../styles'
+import { Facts, Dater, Slide } from '../../../services/build'
 
 export default class Form extends Component {
   constructor(props) {
@@ -45,7 +45,7 @@ export default class Form extends Component {
     }
   }
   render() {
-    const { task, time, start, end, prior, power } = this.state
+    const { task, time, start, end, prior, power, parts } = this.state
     return (
       <Fragment>
         <Input
@@ -90,6 +90,11 @@ export default class Form extends Component {
           step={5}
           onValueChange={power => this.setState({ power })}
           value={power}
+        />
+        <Facts
+          title="Divide"
+          onValueChange={parts => this.setState({ parts })}
+          value={parts}
         />
         <Words onPress={() => this.submit(task, time, prior, power)}>
           Submit
