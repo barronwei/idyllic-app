@@ -1,12 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Holds, Title } from '../../../../styles'
 
-export default class Per extends Component {
-  render() {
-    return (
-      <Holds>
-        <Title>Personal</Title>
-      </Holds>
-    )
-  }
+export default function Per() {
+  return (
+    <Holds>
+      <Title>Personal</Title>
+    </Holds>
+  )
 }

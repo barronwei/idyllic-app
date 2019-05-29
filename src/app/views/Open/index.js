@@ -1,21 +1,19 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Holds, Title, Words } from '../../styles'
 import { navigate } from '../../services/navigation'
 
-export default class Open extends Component {
-  signup = () => {
+export default function Open() {
+  const signup = () => {
     navigate('Apply')
   }
-  signin = () => {
+  const signin = () => {
     navigate('Login')
   }
-  render() {
-    return (
-      <Holds>
-        <Title>Welcome to Idyllic</Title>
-        <Words onPress={this.signup}>Sign Up</Words>
-        <Words onPress={this.signin}>Sign In</Words>
-      </Holds>
-    )
-  }
+  return (
+    <Holds>
+      <Title>Welcome to Idyllic</Title>
+      <Words onPress={signup}>Sign Up</Words>
+      <Words onPress={signin}>Sign In</Words>
+    </Holds>
+  )
 }

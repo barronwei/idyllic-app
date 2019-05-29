@@ -1,14 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Holds, Title } from '../../styles'
 import Form from './build'
 
-export default class Login extends Component {
-  render() {
-    return (
-      <Holds>
-        <Title>Sign In</Title>
-        <Form />
-      </Holds>
-    )
-  }
+export default function Login() {
+  return (
+    <Holds>
+      <Title>Sign In</Title>
+      <Form />
+    </Holds>
+  )
 }
