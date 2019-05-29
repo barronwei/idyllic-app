@@ -13,6 +13,7 @@
     "react-native-firebase": "^5.4.1",
     "react-native-gesture-handler": "^1.2.2",
     "react-native-hooks": "0.0.6",
+    "react-native-modal": "^11.0.1",
     "react-native-modal-datetime-picker": "^7.4.2",
     "react-native-pose": "^0.9.1",
     "react-native-slider": "^0.11.0",

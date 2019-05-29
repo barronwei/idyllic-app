@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import { Alert } from 'react-native'
 import firebase from 'react-native-firebase'
 import { Input, Words } from '../../styles'
@@ -18,7 +18,7 @@ export default function Form() {
   }
   const { mail, pass } = state
   return (
-    <React.Fragment>
+    <Fragment>
       <Input
         placeholder="email"
         textAlign="center"
@@ -37,6 +37,6 @@ export default function Form() {
       />
       <Words onPress={() => submit(mail, pass)}>Submit</Words>
       <Words onPress={backer}>Return</Words>
-    </React.Fragment>
+    </Fragment>
   )
 }
