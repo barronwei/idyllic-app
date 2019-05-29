@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { Alert } from 'react-native'
+import firebase from 'react-native-firebase'
 import moment from 'moment'
 import { Words, Input } from '../../../styles'
 import { Facts, Dater, Slide } from '../../../services/build'
@@ -25,10 +26,7 @@ export default class Form extends Component {
       parts: false
     }
   }
-  viewer = t => {
-    this.setState({ [t.name]: { ...t, show: !t.show } })
-  }
-  select = (t, d) => {
+  timing = (t, d) => {
     this.setState({
       [t.name]: {
         ...t,
@@ -37,9 +35,9 @@ export default class Form extends Component {
       }
     })
   }
-  submit = async (task, time, prior, power) => {
+  submit = async s => {
     try {
-      Alert.alert(prior + power)
+      Alert.alert(s.prior + s.power)
     } catch (error) {
       Alert.alert(error.message)
     }
@@ -64,16 +62,16 @@ export default class Form extends Component {
         <Dater
           value={start}
           title="Start"
-          click={() => this.viewer(start)}
-          onConfirm={d => this.select(start, d)}
-          onCancel={() => this.viewer(start)}
+          click={() => this.timing(start, start.date)}
+          onConfirm={d => this.timing(start, d)}
+          onCancel={() => this.timing(start, start.date)}
         />
         <Dater
           value={end}
           title="End"
-          click={() => this.viewer(end)}
-          onConfirm={d => this.select(end, d)}
-          onCancel={() => this.viewer(end)}
+          click={() => this.timing(end, end.date)}
+          onConfirm={d => this.timing(end, d)}
+          onCancel={() => this.timing(end, end.date)}
         />
         <Words>Priority</Words>
         <Slide
@@ -96,9 +94,7 @@ export default class Form extends Component {
           onValueChange={parts => this.setState({ parts })}
           value={parts}
         />
-        <Words onPress={() => this.submit(task, time, prior, power)}>
-          Submit
-        </Words>
+        <Words onPress={() => this.submit(this.state)}>Submit</Words>
       </Fragment>
     )
   }
