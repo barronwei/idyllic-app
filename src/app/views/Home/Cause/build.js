@@ -18,7 +18,7 @@ export default class Form extends Component {
       end: {
         name: 'end',
         show: false,
-        date: moment()
+        date: moment().add(1, 'minute')
       },
       prior: 3,
       power: 50,
@@ -63,14 +63,14 @@ export default class Form extends Component {
         />
         <Dater
           value={start}
-          title="Start Date"
+          title="Start"
           click={() => this.viewer(start)}
           onConfirm={d => this.select(start, d)}
           onCancel={() => this.viewer(start)}
         />
         <Dater
           value={end}
-          title="End Date"
+          title="End"
           click={() => this.viewer(end)}
           onConfirm={d => this.select(end, d)}
           onCancel={() => this.viewer(end)}

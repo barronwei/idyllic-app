@@ -3,7 +3,7 @@ import { Alert } from 'react-native'
 import firebase from 'react-native-firebase'
 import { Holds, Title, Words } from '../../../styles'
 
-export default class Dun extends Component {
+export default class Focus extends Component {
   logout = async () => {
     try {
       await firebase.auth().signOut()

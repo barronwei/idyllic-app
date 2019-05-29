@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { wp, hp } from './services/visual'
 
-export const Holds = styled.View({
+export const Holds = styled.SafeAreaView({
   flex: 1,
   justifyContent: 'center',
   alignItems: 'center',
