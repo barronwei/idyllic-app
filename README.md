@@ -1,3 +1,3 @@
-# idyllic-native
+# idyllic
 
 carefree
