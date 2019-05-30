@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react'
 import { Alert } from 'react-native'
 import firebase from 'react-native-firebase'
 import moment from 'moment'
+import uuid from 'uuid'
 import { Words, Input } from '../../../styles'
 import { Facts, Dater, Slide } from '../../../services/build'
 
@@ -12,12 +13,14 @@ export default function Form() {
     start: {
       name: 'start',
       show: false,
-      date: moment()
+      date: moment().format()
     },
     end: {
       name: 'end',
       show: false,
-      date: moment().add(1, 'minute')
+      date: moment()
+        .add(1, 'minute')
+        .format()
     },
     prior: 3,
     power: 50,
@@ -29,13 +32,17 @@ export default function Form() {
       [t.name]: {
         ...t,
         show: !t.show,
-        date: moment(d)
+        date: moment(d).format()
       }
     })
   }
-  const submit = async s => {
+  const submit = async event => {
     try {
-      Alert.alert(s.prior + s.power)
+      firebase
+        .firestore()
+        .collection(firebase.auth().currentUser.uid)
+        .doc(uuid.v1())
+        .set(event)
     } catch (error) {
       Alert.alert(error.message)
     }
