@@ -1,9 +1,11 @@
-# 0.0.1
+# Update
 
-Notes
+## 0.0.1
 
-- Rewriting highest component using hooks required too much repetitive code
-
-Bugs 
+### Bugs 
 
 - Currently you can click submit on add task multiple times in a row
+
+### Notes
+
+- Rewriting highest component using hooks required too much repetitive code
