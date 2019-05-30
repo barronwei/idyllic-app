@@ -24,7 +24,7 @@ export default function Form() {
         textAlign="center"
         textContentType="emailAddress"
         keyboardType="email-address"
-        onChangeText={mail => setState({ ...state, mail })}
+        onChangeText={mail => setState(ps => ({ ...ps, mail }))}
         value={mail}
       />
       <Input
@@ -32,7 +32,7 @@ export default function Form() {
         textAlign="center"
         textContentType="password"
         secureTextEntry
-        onChangeText={pass => setState({ ...state, pass })}
+        onChangeText={pass => setState(ps => ({ ...ps, pass }))}
         value={pass}
       />
       <Words onPress={() => submit(mail, pass)}>Submit</Words>

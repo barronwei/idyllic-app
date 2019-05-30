@@ -27,14 +27,14 @@ export default function Form() {
     parts: false
   })
   const timing = (t, d) => {
-    setState({
-      ...state,
+    setState(ps => ({
+      ...ps,
       [t.name]: {
         ...t,
         show: !t.show,
         date: moment(d).format()
       }
-    })
+    }))
   }
   const submit = async event => {
     try {
@@ -53,14 +53,14 @@ export default function Form() {
       <Input
         placeholder="task"
         textAlign="center"
-        onChangeText={task => setState({ ...state, task })}
+        onChangeText={task => setState(ps => ({ ...ps, task }))}
         value={task}
       />
       <Input
         placeholder="time"
         textAlign="center"
         keyboardType="numeric"
-        onChangeText={time => setState({ ...state, time })}
+        onChangeText={time => setState(ps => ({ ...ps, time }))}
         value={time}
       />
       <Dater
@@ -82,7 +82,7 @@ export default function Form() {
         minimumValue={1}
         maximumValue={5}
         step={1}
-        onValueChange={prior => setState({ ...state, prior })}
+        onValueChange={prior => setState(ps => ({ ...ps, prior }))}
         value={prior}
       />
       <Words>Energy</Words>
@@ -90,12 +90,12 @@ export default function Form() {
         minimumValue={10}
         maximumValue={90}
         step={5}
-        onValueChange={power => setState({ ...state, power })}
+        onValueChange={power => setState(ps => ({ ...ps, power }))}
         value={power}
       />
       <Facts
         title="Divide"
-        onValueChange={parts => setState({ ...state, parts })}
+        onValueChange={parts => setState(ps => ({ ...ps, parts }))}
         value={parts}
       />
       <Words onPress={() => submit(state)}>Submit</Words>
