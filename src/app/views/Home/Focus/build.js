@@ -11,24 +11,23 @@ export default class Main extends Component {
     }
   }
   componentDidMount() {
-    this.ref = firebase
+    this.sub = firebase
       .firestore()
       .collection('users')
       .doc(firebase.auth().currentUser.uid)
       .collection('tasks')
-    this.sub = this.ref.onSnapshot(this.listen)
+      .onSnapshot(ts => {
+        const events = []
+        ts.forEach(t => {
+          events.push({ ...t.data(), id: t.id })
+        })
+        this.setState({
+          events
+        })
+      })
   }
   componentWillUnmount() {
     this.sub()
-  }
-  listen = tasks => {
-    const events = []
-    tasks.forEach(task => {
-      events.push({ ...task.data(), id: task.id })
-    })
-    this.setState({
-      events
-    })
   }
   render() {
     const { events } = this.state

@@ -2,13 +2,13 @@ import React, { Fragment, useState } from 'react'
 import { Alert } from 'react-native'
 import firebase from 'react-native-firebase'
 import moment from 'moment'
-import uuid from 'uuid'
-import { Words, Input } from '../../../styles'
 import { Facts, Dater, Slide } from '../../../services/build'
 import { check } from '../../../services/logic'
+import { Popup } from '../../../services/popup'
+import { Words, Input } from '../../../styles'
 
 export default function Form() {
-  const base = {
+  const s = {
     task: '',
     time: '',
     start: {
@@ -28,7 +28,9 @@ export default function Form() {
     parts: false,
     shift: false
   }
-  const [state, setState] = useState(base)
+  const m = { submit: false }
+  const [state, setState] = useState(s)
+  const [modal, setModal] = useState(m)
   const { task, time, start, end, prior, power, parts, shift } = state
   const timing = (t, d) => {
     setState(ps => ({
@@ -48,8 +50,8 @@ export default function Form() {
         .doc(firebase.auth().currentUser.uid)
         .collection('tasks')
         .add({ ...state, start: start.date, end: end.date })
-      setState(base)
-      Alert.alert('That is one more task you have to complete!')
+      setModal({ submit: true })
+      setState(s)
     } catch (error) {
       Alert.alert(error.message)
     }
@@ -65,7 +67,6 @@ export default function Form() {
     <Fragment>
       <Input
         autoCorrect
-        autoFocus
         placeholder="task"
         textAlign="center"
         onChangeText={task => setState(ps => ({ ...ps, task }))}
@@ -119,6 +120,7 @@ export default function Form() {
         value={shift}
       />
       <Words onPress={verify}>Submit</Words>
+      <Popup isVisible={modal.submit} text="Added new task!" />
     </Fragment>
   )
 }

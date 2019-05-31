@@ -43,3 +43,24 @@
 - Fantastic that Firebase supports offline persistence
 
 ## 0.0.3
+
+- Removed persistence settings due to redundance with default settings
+- Removed uuid package because Firebase offers keys
+- Added basic popup modal
+
+### Bugs
+
+- Basic popup modal text is not centered 
+- Basic popup modal has no exit button
+
+### Todo
+
+- Fix popup modal
+- Pass props through tab navigators
+- Previous todo tasks
+
+### Misc
+
+- Still trying to figure out how to pass props through tab navigators
+  
+

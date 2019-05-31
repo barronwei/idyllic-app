@@ -1,22 +1,32 @@
 import styled from 'styled-components'
-import { wp, hp } from './services/visual'
+import { hp, wp } from './services/visual'
 
 export const Holds = styled.SafeAreaView({
   flex: 1,
-  justifyContent: 'center',
   alignItems: 'center',
-  backgroundColor: '#FFFFFF'
+  justifyContent: 'center'
 })
 
-export const Mains = styled.SafeAreaView({
+export const Lists = styled.SafeAreaView({
   flex: 1,
   alignItems: 'center',
   backgroundColor: '#FFFFFF'
 })
 
-export const Event = styled.View({
-  justifyContent: 'center',
+export const Notes = styled.View({
   alignItems: 'center',
+  justifyContent: 'center',
+  backgroundColor: '#FFFFFF',
+  borderColor: 'black',
+  borderWidth: 1,
+  borderRadius: 10,
+  height: hp(20),
+  width: wp(60)
+})
+
+export const Event = styled.View({
+  alignItems: 'center',
+  justifyContent: 'center',
   elevation: 4,
   backgroundColor: '#FFFFFF',
   borderColor: 'black',
@@ -25,8 +35,8 @@ export const Event = styled.View({
   shadowOpacity: 0.4,
   shadowRadius: 4,
   shadowColor: 'gray',
-  width: wp(90),
   height: hp(10),
+  width: wp(90),
   margin: hp(1)
 })
 
@@ -43,6 +53,6 @@ export const Input = styled.TextInput({
   margin: 10,
   borderColor: 'gray',
   borderWidth: 1,
-  width: wp(80),
-  height: hp(4)
+  height: hp(4),
+  width: wp(80)
 })
