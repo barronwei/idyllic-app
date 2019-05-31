@@ -6,7 +6,8 @@ import { navigate } from '../../services/navigation'
 
 export default function Form() {
   const [state, setState] = useState({ mail: '', pass: '' })
-  const submit = async (mail, pass) => {
+  const { mail, pass } = state
+  const submit = async () => {
     try {
       await firebase.auth().createUserWithEmailAndPassword(mail, pass)
     } catch (error) {
@@ -16,7 +17,6 @@ export default function Form() {
   const backer = () => {
     navigate('Open')
   }
-  const { mail, pass } = state
   return (
     <Fragment>
       <Input

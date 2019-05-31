@@ -8,6 +8,12 @@ export const Holds = styled.SafeAreaView({
   backgroundColor: '#FFFFFF'
 })
 
+export const Mains = styled.SafeAreaView({
+  flex: 1,
+  alignItems: 'center',
+  backgroundColor: '#FFFFFF'
+})
+
 export const Event = styled.View({
   justifyContent: 'center',
   alignItems: 'center',
@@ -16,11 +22,12 @@ export const Event = styled.View({
   borderColor: 'black',
   borderWidth: 1,
   borderRadius: 10,
-  shadowOpacity: 0.5,
-  shadowRadius: 5,
+  shadowOpacity: 0.4,
+  shadowRadius: 4,
   shadowColor: 'gray',
   width: wp(90),
-  height: hp(10)
+  height: hp(10),
+  margin: hp(1)
 })
 
 export const Title = styled.Text({

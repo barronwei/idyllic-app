@@ -5,9 +5,10 @@ import moment from 'moment'
 import uuid from 'uuid'
 import { Words, Input } from '../../../styles'
 import { Facts, Dater, Slide } from '../../../services/build'
+import { check } from '../../../services/logic'
 
 export default function Form() {
-  const [state, setState] = useState({
+  const base = {
     task: '',
     time: '',
     start: {
@@ -24,8 +25,11 @@ export default function Form() {
     },
     prior: 3,
     power: 50,
-    parts: false
-  })
+    parts: false,
+    shift: false
+  }
+  const [state, setState] = useState(base)
+  const { task, time, start, end, prior, power, parts, shift } = state
   const timing = (t, d) => {
     setState(ps => ({
       ...ps,
@@ -36,21 +40,32 @@ export default function Form() {
       }
     }))
   }
-  const submit = async event => {
+  const submit = async () => {
     try {
       firebase
         .firestore()
-        .collection(firebase.auth().currentUser.uid)
-        .doc(uuid.v1())
-        .set(event)
+        .collection('users')
+        .doc(firebase.auth().currentUser.uid)
+        .collection('tasks')
+        .add({ ...state, start: start.date, end: end.date })
+      setState(base)
+      Alert.alert('That is one more task you have to complete!')
     } catch (error) {
       Alert.alert(error.message)
     }
   }
-  const { task, time, start, end, prior, power, parts } = state
+  const verify = () => {
+    const cs = [
+      { c: task.length === 0, e: 'Please give your task a cool name!' }
+    ]
+    check(cs)
+    submit()
+  }
   return (
     <Fragment>
       <Input
+        autoCorrect
+        autoFocus
         placeholder="task"
         textAlign="center"
         onChangeText={task => setState(ps => ({ ...ps, task }))}
@@ -98,7 +113,12 @@ export default function Form() {
         onValueChange={parts => setState(ps => ({ ...ps, parts }))}
         value={parts}
       />
-      <Words onPress={() => submit(state)}>Submit</Words>
+      <Facts
+        title="Change"
+        onValueChange={shift => setState(ps => ({ ...ps, shift }))}
+        value={shift}
+      />
+      <Words onPress={verify}>Submit</Words>
     </Fragment>
   )
 }
