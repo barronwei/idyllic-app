@@ -5,7 +5,6 @@ import Initial from './build'
 
 export default class App extends Component {
   componentDidMount() {
-    this.pers = firebase.firestore().settings({ persistence: true })
     this.auth = firebase.auth().onAuthStateChanged(user => {
       if (user) {
         navigate('Home')
@@ -15,11 +14,10 @@ export default class App extends Component {
     })
   }
   componentWillUnmount() {
-    this.pers()
     this.auth()
   }
-  tackle = ref => {
-    set(ref)
+  tackle = r => {
+    set(r)
   }
   render() {
     return <Initial ref={this.tackle} />

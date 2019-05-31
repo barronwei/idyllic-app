@@ -16,12 +16,12 @@ export default class Main extends Component {
       .collection('users')
       .doc(firebase.auth().currentUser.uid)
       .collection('tasks')
-    this.sub = this.ref.onSnapshot(this.update)
+    this.sub = this.ref.onSnapshot(this.listen)
   }
   componentWillUnmount() {
     this.sub()
   }
-  update = tasks => {
+  listen = tasks => {
     const events = []
     tasks.forEach(task => {
       events.push({ ...task.data(), id: task.id })

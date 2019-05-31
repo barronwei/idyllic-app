@@ -41,3 +41,5 @@
 ### Misc
 
 - Fantastic that Firebase supports offline persistence
+
+## 0.0.3
