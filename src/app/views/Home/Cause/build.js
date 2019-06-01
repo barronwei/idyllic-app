@@ -59,7 +59,7 @@ export default function Form() {
   }
   const verify = () => {
     const cs = [{ c: task, e: 'Please give your task a cool name!' }]
-    setModal(pm => ({ show: true, note: check(cs) }))
+    setModal({ show: true, note: check(cs) })
     if (note) {
       submit()
     }
