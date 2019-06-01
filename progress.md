@@ -50,7 +50,7 @@
 
 ### Bugs
 
-- Basic popup modal text is not centered
+- Basic popup modal text is not centered beyond one line
 - Basic popup modal has no exit button
 
 ### Todo
@@ -75,13 +75,16 @@
 
 ### Bugs
 
--
+- Basic popup modal text is not centered beyond one line
 
 ### Todo
 
--
+- Write deletion of tasks after confirmation from popup modal
+- Write logic for determining order of tasks
+- Previous todo tasks
 
 ### Misc
 
 - User experience sucks for the add task section
-- Reconsider if personal or settings page should be first
+- Reconsider if personal or settings view should be first
+- Finishing the main focus view will result in minimium viable product
