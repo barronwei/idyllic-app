@@ -50,7 +50,7 @@
 
 ### Bugs
 
-- Basic popup modal text is not centered 
+- Basic popup modal text is not centered
 - Basic popup modal has no exit button
 
 ### Todo
@@ -62,24 +62,26 @@
 ### Misc
 
 - Still trying to figure out how to pass props through tab navigators
-  
+
 ## 0.0.4
 
-- Removed pose package 
+- Removed pose package
 - Fixed popup modal for abstraction among error and success messages
 - Popup should prevent people from repeatedly submitting tasks
 - Completed form verification for add task section
 - Abstraction upon popup modal to accept positive and negative prompts
 - Started popup modal for confirmation of removal of tasks
+- Move sign out button to settings page
 
-### Bugs 
+### Bugs
 
 -
 
 ### Todo
 
-- 
+-
 
 ### Misc
 
 - User experience sucks for the add task section
+- Reconsider if personal or settings page should be first
