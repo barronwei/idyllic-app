@@ -28,10 +28,11 @@ export default function Form() {
     parts: false,
     shift: false
   }
-  const m = { submit: false }
+  const m = { show: false, note: '' }
   const [state, setState] = useState(s)
   const [modal, setModal] = useState(m)
   const { task, time, start, end, prior, power, parts, shift } = state
+  const { note, show } = modal
   const timing = (t, d) => {
     setState(ps => ({
       ...ps,
@@ -50,18 +51,18 @@ export default function Form() {
         .doc(firebase.auth().currentUser.uid)
         .collection('tasks')
         .add({ ...state, start: start.date, end: end.date })
-      setModal({ submit: true })
+      setModal(pm => ({ ...pm, note: 'Added your task!' }))
       setState(s)
     } catch (error) {
-      Alert.alert(error.message)
+      setModal(pm => ({ ...pm, note: error.message }))
     }
   }
   const verify = () => {
-    const cs = [
-      { c: task.length === 0, e: 'Please give your task a cool name!' }
-    ]
-    check(cs)
-    submit()
+    const cs = [{ c: task, e: 'Please give your task a cool name!' }]
+    setModal(pm => ({ show: true, note: check(cs) }))
+    if (note) {
+      submit()
+    }
   }
   return (
     <Fragment>
@@ -120,7 +121,7 @@ export default function Form() {
         value={shift}
       />
       <Words onPress={verify}>Submit</Words>
-      <Popup isVisible={modal.submit} text="Added new task!" />
+      <Popup note={note} isVisible={show} />
     </Fragment>
   )
 }

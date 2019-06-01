@@ -3,11 +3,11 @@ import Modal from 'react-native-modal'
 import { Notes, Words } from '../../styles'
 
 export function Popup(props) {
-  const { text, ...more } = props
+  const { note, ...more } = props
   return (
     <Modal {...more} style={{ alignItems: 'center', justifyContent: 'center' }}>
       <Notes>
-        <Words>{text}</Words>
+        <Words>{note}</Words>
       </Notes>
     </Modal>
   )
