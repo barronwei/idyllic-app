@@ -53,8 +53,8 @@ export default function Form() {
         .add({ ...state, start: start.date, end: end.date })
       setModal(pm => ({ ...pm, note: 'Added your task!' }))
       setState(s)
-    } catch (error) {
-      setModal(pm => ({ ...pm, note: error.message }))
+    } catch (e) {
+      setModal(pm => ({ ...pm, note: e.message }))
     }
   }
   const verify = () => {

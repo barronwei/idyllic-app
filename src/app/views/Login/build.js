@@ -10,8 +10,8 @@ export default function Form() {
   const submit = async () => {
     try {
       await firebase.auth().signInWithEmailAndPassword(mail, pass)
-    } catch (error) {
-      Alert.alert(error.message)
+    } catch (e) {
+      Alert.alert(e.message)
     }
   }
   const backer = () => {

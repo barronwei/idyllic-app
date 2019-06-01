@@ -8,8 +8,8 @@ export default function Focus() {
   const logout = async () => {
     try {
       await firebase.auth().signOut()
-    } catch (error) {
-      Alert.alert(error.message)
+    } catch (e) {
+      Alert.alert(e.message)
     }
   }
   return (
