@@ -1,11 +1,11 @@
-import { Alert } from 'react-native'
-
 export function check(cs) {
-  cs.map(c => {
-    if (c.c) {
-      return c.e
+  const hold = []
+  cs.forEach(c => {
+    if (!c.c) {
+      hold.push(c.e)
     }
   })
+  return hold.shift()
 }
 
 export function place() {

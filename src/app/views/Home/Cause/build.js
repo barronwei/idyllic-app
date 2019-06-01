@@ -1,5 +1,4 @@
 import React, { Fragment, useState } from 'react'
-import { Alert } from 'react-native'
 import firebase from 'react-native-firebase'
 import moment from 'moment'
 import { Facts, Dater, Slide } from '../../../services/build'
@@ -33,6 +32,9 @@ export default function Form() {
   const [modal, setModal] = useState(m)
   const { task, time, start, end, prior, power, parts, shift } = state
   const { note, show } = modal
+  const hiding = () => {
+    setModal(m)
+  }
   const timing = (t, d) => {
     setState(ps => ({
       ...ps,
@@ -44,25 +46,27 @@ export default function Form() {
     }))
   }
   const submit = async () => {
-    try {
-      firebase
-        .firestore()
-        .collection('users')
-        .doc(firebase.auth().currentUser.uid)
-        .collection('tasks')
-        .add({ ...state, start: start.date, end: end.date })
-      setModal(pm => ({ ...pm, note: 'Added your task!' }))
-      setState(s)
-    } catch (e) {
-      setModal(pm => ({ ...pm, note: e.message }))
+    const n = check([
+      { c: task, e: 'Please give your task a cool name!' },
+      { c: time > 0, e: 'Time travel is impossible now!' }
+    ])
+    if (n) {
+      setModal(pm => ({ ...pm, note: n }))
+    } else {
+      try {
+        await firebase
+          .firestore()
+          .collection('users')
+          .doc(firebase.auth().currentUser.uid)
+          .collection('tasks')
+          .add({ ...state, start: start.date, end: end.date })
+        setModal(pm => ({ ...pm, note: 'Added your new task!' }))
+        setState(s)
+      } catch (e) {
+        setModal(pm => ({ ...pm, note: e.message }))
+      }
     }
-  }
-  const verify = () => {
-    const cs = [{ c: task, e: 'Please give your task a cool name!' }]
-    setModal({ show: true, note: check(cs) })
-    if (note) {
-      submit()
-    }
+    setModal(pm => ({ ...pm, show: true }))
   }
   return (
     <Fragment>
@@ -120,8 +124,8 @@ export default function Form() {
         onValueChange={shift => setState(ps => ({ ...ps, shift }))}
         value={shift}
       />
-      <Words onPress={verify}>Submit</Words>
-      <Popup note={note} isVisible={show} />
+      <Words onPress={submit}>Submit</Words>
+      <Popup note={note} exit={hiding} isVisible={show} />
     </Fragment>
   )
 }
