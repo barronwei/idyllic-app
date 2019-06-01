@@ -69,6 +69,8 @@
 - Fixed popup modal for abstraction among error and success messages
 - Popup should prevent people from repeatedly submitting tasks
 - Completed form verification for add task section
+- Abstraction upon popup modal to accept positive and negative prompts
+- Started popup modal for confirmation of removal of tasks
 
 ### Bugs 
 
@@ -80,5 +82,4 @@
 
 ### Misc
 
-- User experience might suck for the add task section
-
+- User experience sucks for the add task section

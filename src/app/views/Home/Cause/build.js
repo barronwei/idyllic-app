@@ -1,5 +1,4 @@
 import React, { Fragment, useState } from 'react'
-import { Alert } from 'react-native'
 import firebase from 'react-native-firebase'
 import moment from 'moment'
 import { Facts, Dater, Slide } from '../../../services/build'
