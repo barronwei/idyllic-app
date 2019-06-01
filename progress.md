@@ -63,4 +63,22 @@
 
 - Still trying to figure out how to pass props through tab navigators
   
+## 0.0.4
+
+- Removed pose package 
+- Fixed popup modal for abstraction among error and success messages
+- Popup should prevent people from repeatedly submitting tasks
+- Completed form verification for add task section
+
+### Bugs 
+
+-
+
+### Todo
+
+- 
+
+### Misc
+
+- User experience might suck for the add task section
 

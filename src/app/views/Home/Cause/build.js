@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react'
+import { Alert } from 'react-native'
 import firebase from 'react-native-firebase'
 import moment from 'moment'
 import { Facts, Dater, Slide } from '../../../services/build'
@@ -13,13 +14,15 @@ export default function Form() {
     start: {
       name: 'start',
       show: false,
-      date: moment().format()
+      date: moment()
+        .add(1, 'minute')
+        .format()
     },
     end: {
       name: 'end',
       show: false,
       date: moment()
-        .add(1, 'minute')
+        .add(2, 'minute')
         .format()
     },
     prior: 3,
@@ -46,9 +49,16 @@ export default function Form() {
     }))
   }
   const submit = async () => {
+    const x = moment(start.date)
+    const y = moment(end.date)
+    const z = moment()
     const n = check([
       { c: task, e: 'Please give your task a cool name!' },
-      { c: time > 0, e: 'Time travel is impossible now!' }
+      { c: time, e: 'The task will need time to finish!' },
+      { c: time > 0, e: 'Time travel is impossible now!' },
+      { c: x.diff(z) > 0, e: 'We cannot travel back in time now!' },
+      { c: y.diff(z) > 0, e: 'Next update will have time travel!' },
+      { c: y.diff(x) > time, e: 'Not enough time by those dates!' }
     ])
     if (n) {
       setModal(pm => ({ ...pm, note: n }))
