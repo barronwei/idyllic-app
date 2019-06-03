@@ -8,6 +8,10 @@ export function check(cs) {
   return hold.shift()
 }
 
-export function place() {
-  return []
+export function order(co, ts) {
+  if (co) {
+    ts.map(t => {
+      return t.id
+    })
+  }
 }

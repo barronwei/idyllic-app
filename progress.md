@@ -110,9 +110,40 @@
 - Need to modify completion of tasks functionality to incorporate metrics
 - Need to abstract tasks list for perhaps a completed tasks list
 - Need to add closing functionality for rejection after swipeable
+- Need to add preference for certain part of the day for certain tasks
+- Need to add option to denote difficulty of the task
+- Need to look into how time zone is accounted for by moment
+- Need to add optional parameters
 - Previous tasks
 
 ### Misc
 
 - Fortunately, one view only needs one popup modal due to abstraction
 - Storing the initial state for hooks in a variable allows for easy erasure
+- Consdier the possibility of having optional parameters
+
+# 0.0.6
+
+- Added potential features markdown file
+
+### Bugs
+
+- Previous bugs
+
+### Todo
+
+- Need to add a button to check in current times and energy
+- Add check at home page for energy level comparison to energy required
+- Have two lists of ordered, total, and completed tasks
+- Guarantee that force placement is denied unless time equals time difference
+- Add time cushioning setting
+
+### Misc
+
+- Consider adding search functionality for searches in the future
+- Location feature is a possibility as well
+- Consider suggesting time cushioning
+- Consider adding a setting for dividing tasks into sections
+- Still trying to figure out how to pass props through tab navigators
+- New file accounts for future features, while this file accounts for next steps
+- Aformentioned future features will remain in this file
