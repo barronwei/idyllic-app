@@ -1,11 +1,14 @@
 import React, { Component, Fragment } from 'react'
-import { SectionList } from 'react-native'
+import { Animated, SectionList } from 'react-native'
 import firebase from 'react-native-firebase'
-import { Event, Words } from '../../../styles'
+import Swipeable from 'react-native-gesture-handler/Swipeable'
+import { colors } from '../../../config'
+import { Event, Panel, Words } from '../../../styles'
+import { wp } from '../../../services/visual'
 
 export default class Main extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       events: []
     }
@@ -29,23 +32,53 @@ export default class Main extends Component {
   componentWillUnmount() {
     this.sub()
   }
+
+  swiper = (i, d) => {
+    const { affirm, negate } = colors
+    const inputRange = [-100, 0, 100]
+    const translateX = d.interpolate({
+      inputRange,
+      outputRange: inputRange.map(x => x + i * wp(34))
+    })
+    return (
+      <Panel
+        as={Animated.View}
+        style={{
+          backgroundColor: i > 0 ? negate : affirm,
+          transform: [{ translateX }]
+        }}
+      >
+        <Words>{i > 0 ? 'Delete' : 'Finish'}</Words>
+      </Panel>
+    )
+  }
+
   render() {
+    const { prompt } = this.props
     const { events } = this.state
     if (events.length === 0) {
       return <Words>Good riddance you have time on your hands!</Words>
     } else {
       return (
-        <SectionList
-          keyExtractor={(item, index) => item + index}
-          renderItem={({ item }) => (
-            <Fragment key={item.id}>
-              <Event>
-                <Words>{item.task}</Words>
-              </Event>
-            </Fragment>
-          )}
-          sections={[{ title: 'Placeholder', data: events }]}
-        />
+        <Fragment>
+          <SectionList
+            keyExtractor={(item, index) => item + index}
+            renderItem={({ item }) => (
+              <Swipeable
+                key={item.id}
+                onSwipeableLeftOpen={() => prompt(false, item)}
+                onSwipeableRightOpen={() => prompt(true, item)}
+                renderLeftActions={(p, d) => this.swiper(-1, d)}
+                renderRightActions={(p, d) => this.swiper(1, d)}
+              >
+                <Event>
+                  <Words>{item.task}</Words>
+                </Event>
+              </Swipeable>
+            )}
+            sections={[{ title: 'Placeholder', data: events }]}
+          />
+        </Fragment>
       )
     }
   }

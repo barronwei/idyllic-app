@@ -3,10 +3,10 @@ import firebase from 'react-native-firebase'
 import moment from 'moment'
 import { Facts, Dater, Slide } from '../../../services/build'
 import { check } from '../../../services/logic'
-import { Popup } from '../../../services/popup'
 import { Words, Input } from '../../../styles'
 
-export default function Form() {
+export default function Form(props) {
+  const { setModal } = props
   const s = {
     task: '',
     time: '',
@@ -29,14 +29,8 @@ export default function Form() {
     parts: false,
     shift: false
   }
-  const m = { show: false, note: '' }
   const [state, setState] = useState(s)
-  const [modal, setModal] = useState(m)
   const { task, time, start, end, prior, power, parts, shift } = state
-  const { note, show } = modal
-  const hiding = () => {
-    setModal(m)
-  }
   const timing = (t, d) => {
     setState(ps => ({
       ...ps,
@@ -134,7 +128,6 @@ export default function Form() {
         value={shift}
       />
       <Words onPress={submit}>Submit</Words>
-      <Popup note={note} exit={hiding} isVisible={show} />
     </Fragment>
   )
 }

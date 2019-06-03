@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components/native'
 import { hp, wp } from './services/visual'
 
 export const Holds = styled.SafeAreaView({
@@ -37,6 +37,22 @@ export const Event = styled.View({
   shadowColor: 'gray',
   height: hp(10),
   width: wp(90),
+  margin: hp(1)
+})
+
+export const Panel = styled.View({
+  alignItems: 'center',
+  justifyContent: 'center',
+  elevation: 4,
+  backgroundColor: '#FFFFFF',
+  borderColor: 'black',
+  borderWidth: 1,
+  borderRadius: 10,
+  shadowOpacity: 0.4,
+  shadowRadius: 4,
+  shadowColor: 'gray',
+  height: hp(10),
+  width: wp(30),
   margin: hp(1)
 })
 

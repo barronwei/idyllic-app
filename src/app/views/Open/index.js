@@ -1,6 +1,6 @@
 import React from 'react'
-import { Holds, Title, Words } from '../../styles'
 import { navigate } from '../../services/navigation'
+import { Holds, Title, Words } from '../../styles'
 
 export default function Open() {
   const signup = () => {

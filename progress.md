@@ -57,7 +57,7 @@
 
 - Fix popup modal
 - Pass props through tab navigators
-- Previous todo tasks
+- Previous tasks
 
 ### Misc
 
@@ -81,10 +81,37 @@
 
 - Write deletion of tasks after confirmation from popup modal
 - Write logic for determining order of tasks
-- Previous todo tasks
+- Previous tasks
 
 ### Misc
 
 - User experience sucks for the add task section
 - Reconsider if personal or settings view should be first
 - Finishing the main focus view will result in minimium viable product
+
+## 0.0.5
+
+- Removed react native hooks
+- Replaced all alerts with popup modals
+- Added swipe functionality to each item in the section list
+- Added completion and deletion of tasks
+- Swipe functionality should fit all screens
+- Abstracted colors for accept and decline to configuration
+- Using native directory of styled components
+- Ordered imports
+- Renamed certain functions
+
+### Bugs
+
+- Previous bugs
+
+### Todo
+
+- Need to modify completion of tasks functionality to incorporate metrics
+- Need to abstract tasks list for perhaps a completed tasks list
+- Previous tasks
+
+### Misc
+
+- Fortunately, one view only needs one popup modal due to abstraction
+- Storing the initial state for hooks in a variable allows for easy erasure

@@ -21,6 +21,6 @@ export function Popup(props) {
   )
 }
 
-export function main() {
+export function Quite() {
   return []
 }

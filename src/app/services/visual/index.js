@@ -14,6 +14,6 @@ export function wp(p) {
   return PixelRatio.roundToNearestPixel((dw * ew) / 100)
 }
 
-export function Iconize(l, s) {
+export function ic(l, s) {
   return <Icon name={Platform.OS === 'ios' ? 'ios-' + l : 'md-' + l} size={s} />
 }

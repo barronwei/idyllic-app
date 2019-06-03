@@ -1,17 +1,17 @@
 import React, { Fragment, useState } from 'react'
-import { Alert } from 'react-native'
 import firebase from 'react-native-firebase'
-import { Input, Words } from '../../styles'
 import { navigate } from '../../services/navigation'
+import { Input, Words } from '../../styles'
 
-export default function Form() {
+export default function Form(props) {
+  const { setModal } = props
   const [state, setState] = useState({ mail: '', pass: '' })
   const { mail, pass } = state
   const submit = async () => {
     try {
       await firebase.auth().signInWithEmailAndPassword(mail, pass)
     } catch (e) {
-      Alert.alert(e.message)
+      setModal({ note: e.message, show: true })
     }
   }
   const backer = () => {
