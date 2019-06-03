@@ -109,6 +109,7 @@
 
 - Need to modify completion of tasks functionality to incorporate metrics
 - Need to abstract tasks list for perhaps a completed tasks list
+- Need to add closing functionality for rejection after swipeable
 - Previous tasks
 
 ### Misc
