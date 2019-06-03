@@ -20,3 +20,4 @@
 
 - Configure how tasks are divided by sections with lower bound requirements
 - Configure how suggestions are made
+- Configure categories to assign common properties to groups of tasks
