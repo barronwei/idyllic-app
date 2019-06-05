@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react'
 import firebase from 'react-native-firebase'
 import moment from 'moment'
-import { Facts, Dater, Slide } from '../../../services/build'
+import { Facts, Dater, Slide } from '../../../services/base'
 import { check } from '../../../services/logic'
 import { Words, Input } from '../../../styles'
 
