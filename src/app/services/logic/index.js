@@ -8,10 +8,14 @@ export function check(cs) {
   return hold.shift()
 }
 
+export function split(co, pr) {
+  return co.reduce((r, v) => (r[pr(v) ? 0 : 1].push(v), r), [[], []])
+}
+
 export function order(co, ts) {
-  if (co) {
-    ts.map(t => {
-      return t.id
+  if (!co) {
+    ts.reduce(t => {
+      t.shift
     })
   }
 }
