@@ -14,8 +14,6 @@ export function split(co, pr) {
 
 export function order(co, ts) {
   if (!co) {
-    ts.reduce(t => {
-      t.shift
-    })
+    const [x, y] = split(ts, ts.shift)
   }
 }
