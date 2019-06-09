@@ -125,7 +125,7 @@
 # 0.0.6
 
 - Added potential features markdown file
-- Added partition function to logic to separate set and mutable tasks
+- Added lodash package for manipulation of arrays
 
 ### Bugs
 
