@@ -3,4 +3,6 @@ export const colors = {
   negate: 'crimson'
 }
 
-export const holder = {}
+export const record = {
+  cap: 7
+}

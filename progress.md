@@ -148,3 +148,23 @@
 - Still trying to figure out how to pass props through tab navigators
 - New file accounts for future features, while this file accounts for next steps
 - Aformentioned future features will remain in this file
+
+# 0.0.7
+
+- Added aditional logic to order function
+- Added capacity to configuration 
+
+### Bugs
+
+- Need to fix check for time from now in add task section for correct units
+- Previous bugs
+
+
+### Todo
+
+- Previous todos
+ 
+### Misc 
+
+- Remmeber to differ between now and end time for a task to display finished
+- Progress has slown down due to trip to Cape Town
