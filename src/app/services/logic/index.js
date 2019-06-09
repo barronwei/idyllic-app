@@ -1,5 +1,4 @@
 import moment from 'moment'
-import { filter, first, orderBy, partition } from 'lodash'
 import { record } from '../../config'
 
 export function check(cs) {
@@ -9,15 +8,18 @@ export function check(cs) {
       hold.push(c.e)
     }
   })
-  return first(hold)
+  return hold.shift()
+}
+
+export function split(co, pr) {
+  return co.reduce((r, v) => (r[pr(v) ? 0 : 1].push(v), r), [[], []])
 }
 
 export function order(ts) {
   const { cap } = record
   const m = moment()
-  const n = filter(ts, t => {
-    moment(t.start).diff(m, 'days') < cap
+  const n = ts.filter(t => {
+    moment(t.start).diff(m, 'hours') < cap
   })
-  const o = orderBy(n, ['prior', 'power'], ['desc', 'desc'])
-  const [xs, ys] = partition(o, o.shift)
+  const [xs, ys] = split(n, 'shift')
 }

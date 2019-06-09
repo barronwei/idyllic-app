@@ -4,5 +4,5 @@ export const colors = {
 }
 
 export const record = {
-  cap: 7
+  cap: 168
 }
