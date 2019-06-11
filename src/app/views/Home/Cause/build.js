@@ -14,20 +14,20 @@ export default function Form(props) {
       name: 'start',
       show: false,
       date: moment()
-        .add(1, 'minute')
+        .add(1, 'm')
         .format()
     },
     end: {
       name: 'end',
       show: false,
       date: moment()
-        .add(2, 'minute')
+        .add(2, 'm')
         .format()
     },
     prior: 3,
     power: 50,
     parts: false,
-    shift: false
+    shift: true
   }
   const [state, setState] = useState(s)
   const { task, time, start, end, prior, power, parts, shift } = state
@@ -49,9 +49,10 @@ export default function Form(props) {
       { c: task, e: 'Please give your task a cool name!' },
       { c: time, e: 'The task will need time to finish!' },
       { c: time > 0, e: 'Time travel is impossible now!' },
-      { c: x.diff(z) > 0, e: 'We cannot travel back in time now!' },
-      { c: y.diff(z) > 0, e: 'Next update will have time travel!' },
-      { c: y.diff(x) > time, e: 'Not enough time by those dates!' }
+      { c: x.isBefore(y), e: 'How can you finish before you start?' },
+      { c: x.isAfter(z), e: 'We cannot travel back in time now!' },
+      { c: y.isAfter(z), e: 'Next update will have time travel!' },
+      { c: y.diff(x, 'h') > time, e: 'Not enough time by those dates!' }
     ])
     if (n) {
       setModal(pm => ({ ...pm, note: n }))

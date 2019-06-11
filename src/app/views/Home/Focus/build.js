@@ -3,8 +3,8 @@ import { Animated, SectionList } from 'react-native'
 import firebase from 'react-native-firebase'
 import Swipeable from 'react-native-gesture-handler/Swipeable'
 import { colors } from '../../../config'
-import { Event, Panel, Words } from '../../../styles'
 import { wp } from '../../../services/visual'
+import { Event, Panel, Words } from '../../../styles'
 
 export default class Main extends Component {
   constructor(props) {
@@ -56,30 +56,31 @@ export default class Main extends Component {
   render() {
     const { prompt } = this.props
     const { events } = this.state
-    if (events.length === 0) {
-      return <Words>Good riddance you have time on your hands!</Words>
-    } else {
-      return (
-        <Fragment>
-          <SectionList
-            keyExtractor={(item, index) => item + index}
-            renderItem={({ item }) => (
-              <Swipeable
-                key={item.id}
-                onSwipeableLeftOpen={() => prompt(false, item)}
-                onSwipeableRightOpen={() => prompt(true, item)}
-                renderLeftActions={(p, d) => this.swiper(-1, d)}
-                renderRightActions={(p, d) => this.swiper(1, d)}
-              >
-                <Event>
-                  <Words>{item.task}</Words>
-                </Event>
-              </Swipeable>
-            )}
-            sections={[{ title: 'Placeholder', data: events }]}
-          />
-        </Fragment>
-      )
-    }
+    return events.length ? (
+      <Fragment>
+        <SectionList
+          keyExtractor={(item, index) => item + index}
+          renderItem={({ item }) => (
+            <Swipeable
+              key={item.id}
+              onSwipeableLeftOpen={() => prompt(false, item)}
+              onSwipeableRightOpen={() => prompt(true, item)}
+              renderLeftActions={(p, d) => this.swiper(-1, d)}
+              renderRightActions={(p, d) => this.swiper(1, d)}
+            >
+              <Event>
+                <Words>{item.task}</Words>
+              </Event>
+            </Swipeable>
+          )}
+          sections={[{ title: 'Placeholder', data: events }]}
+        />
+      </Fragment>
+    ) : (
+      <Fragment>
+        <Words>Congratulations!</Words>
+        <Words>Good riddance you have time on your hands!</Words>
+      </Fragment>
+    )
   }
 }

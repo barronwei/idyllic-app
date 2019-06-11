@@ -167,4 +167,27 @@
 ### Misc 
 
 - Remmeber to differ between now and end time for a task to display finished
-- Progress has slown down due to trip to Cape Town
+- Progress has slown down due to trip to a new continent
+
+
+# 0.0.8
+
+- Added aditional logic to order function, which currently assumes perfect fit
+- Cleaned up conditional if statements with conditional ternary operators
+- Changed capacity in configuration to hours instead of minutes
+
+### Bugs
+
+- Need to review order function, which is currently broken
+- Previous bugs
+
+### Todo
+
+- Create a helper function that reorders tasks with same level of priority
+- Previous todos
+ 
+### Misc 
+
+- Moment is phenomenal with time operations
+- There are so many array methods!
+- 

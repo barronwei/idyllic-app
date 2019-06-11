@@ -6,11 +6,7 @@ import Initial from './build'
 export default class App extends Component {
   componentDidMount() {
     this.auth = firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-        navigate('Home')
-      } else {
-        navigate('Open')
-      }
+      user ? navigate('Home') : navigate('Open')
     })
   }
   componentWillUnmount() {
