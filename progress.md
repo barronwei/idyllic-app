@@ -184,10 +184,11 @@
 ### Todo
 
 - Create a helper function that reorders tasks with same level of priority
+- Add loading screens
 - Previous todos
  
 ### Misc 
 
 - Moment is phenomenal with time operations
-- There are so many array methods!
-- 
+- Cannot seem to use ternary operators with try catch exception handling
+- There are so many array methods
