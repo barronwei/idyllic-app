@@ -5,6 +5,7 @@ import Swipeable from 'react-native-gesture-handler/Swipeable'
 import { colors } from '../../../config'
 import { wp } from '../../../services/visual'
 import { Event, Panel, Words } from '../../../styles'
+import { order } from '../../../services/logic'
 
 export default class Main extends Component {
   constructor(props) {
@@ -32,7 +33,6 @@ export default class Main extends Component {
   componentWillUnmount() {
     this.sub()
   }
-
   swiper = (i, d) => {
     const { affirm, negate } = colors
     const inputRange = [-100, 0, 100]
@@ -52,7 +52,6 @@ export default class Main extends Component {
       </Panel>
     )
   }
-
   render() {
     const { prompt } = this.props
     const { events } = this.state
@@ -73,7 +72,7 @@ export default class Main extends Component {
               </Event>
             </Swipeable>
           )}
-          sections={[{ title: 'Placeholder', data: events }]}
+          sections={[{ title: 'Placeholder', data: order(events) }]}
         />
       </Fragment>
     ) : (

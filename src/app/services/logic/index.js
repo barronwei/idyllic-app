@@ -11,7 +11,7 @@ export function check(cs) {
   return a.shift()
 }
 
-export function split(co, fn) {
+function split(co, fn) {
   return co.reduce((r, v) => (r[fn(v) ? 0 : 1].push(v), r), [[], []])
 }
 
@@ -22,7 +22,7 @@ function reset(xs) {
 function basic(xs, ys) {
   if (xs.length > 0) {
     const x = xs.shift()
-    const b = ys.some((y, i) => {
+    ys.every((y, i) => {
       const p = i ? ys[i - 1].end : moment()
       if (x.start.isBetween(p, y) && p.diff(y) > x.time) {
         ys.splice(i, { ...x, ss: p, se: p.add(x.time, 'h') })
@@ -31,14 +31,14 @@ function basic(xs, ys) {
         return false
       }
     })
-    b ? basic(xs, ys) : basic(reset(xs.unshift(x)), ys)
+    return ys
   } else {
     return ys
   }
 }
 
 export function order(ts) {
-  const { cap } = record
+  const cap = 7
   const m = ts.filter(t => moment(t.start).isBefore(moment().add(cap, 'd')))
   const o = m.map(n => ({ ...n, start: moment(n.start), end: moment(n.end) }))
   const [xs, ys] = split(o, p => p.shift)
