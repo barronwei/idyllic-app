@@ -1,3 +1,3 @@
 # idyllic
 
-automatic daily scheduling with React Native and Firebase
+An automatic scheduling app built with React Native
