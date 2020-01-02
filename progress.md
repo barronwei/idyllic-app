@@ -1,93 +1,71 @@
-## 0.0.1
+# 0.0.8
 
-- Completed add task section for minimum viable product
-
-### Bugs
-
-- Currently you can click submit on the add task section multiple times in a row
-
-### Todo
-
-- Add form verification and erasure on completion for the add task section
-- Build general modal component for errors and confirmation
-- Start writing algorithm for task sorting
-
-### Misc
-
-- Rewriting highest component using hooks required too much repetitive code
-
-## 0.0.2
-
-- Completed form verification system in logic directory
-- Functional but perhaps not optimal reading of Firestore tasks
-- Functional offline
-- Form for add task clears after sucessful submission
+- Added aditional logic to order function, which currently assumes perfect fit
+- Cleaned up conditional if statements with conditional ternary operators
+- Changed capacity in configuration to hours instead of minutes
 
 ### Bugs
 
-- Lacking complete form verification for add task section
+- Need to review order function, which is currently broken
+- Previous bugs
 
 ### Todo
 
-- Add section headers to the list
-- Add top tabs to main home page
-- Add details of each task to the list
-- Add functionality for editing and removing tasks in the list
-- Review list props specifically keys
-- Complete form verification for the add task section
-- Build general modal component for errors and confirmation
-- Start writing algorithm for task sorting
+- Create a helper function that reorders tasks with same level of priority
+- Add loading screens
+- Previous todos
+ 
+### Misc 
 
-### Misc
+- Moment is phenomenal with time operations
+- Cannot seem to use ternary operators with try catch exception handling
+- There are so many array methods
 
-- Fantastic that Firebase supports offline persistence
+# 0.0.7
 
-## 0.0.3
-
-- Removed persistence settings due to redundance with default settings
-- Removed uuid package because Firebase offers keys
-- Added basic popup modal
+- Added aditional logic to order function
+- Added capacity to configuration 
 
 ### Bugs
 
-- Basic popup modal text is not centered beyond one line
-- Basic popup modal has no exit button
+- Need to fix check for time from now in add task section for correct units
+- Previous bugs
 
 ### Todo
 
-- Fix popup modal
-- Pass props through tab navigators
-- Previous tasks
+- Previous todos
+ 
+### Misc 
+
+- Remember to differ between now and end time for a task to display finished
+- Progress has slown down due to trip to a new continent
+
+# 0.0.6
+
+- Added potential features markdown file
+- Added lodash package for manipulation of arrays
+
+### Bugs
+
+- Previous bugs
+
+### Todo
+
+- Need to add a button to check in current times and energy
+- Add check at home page for energy level comparison to energy required
+- Have two lists of ordered, total, and completed tasks
+- Guarantee that force placement is denied unless time equals time difference
+- Add time cushioning setting
 
 ### Misc
 
+- Consider adding search functionality for searches in the future
+- Location feature is a possibility as well
+- Consider suggesting time cushioning
+- Consider adding a setting for dividing tasks into sections
 - Still trying to figure out how to pass props through tab navigators
-
-## 0.0.4
-
-- Removed pose package
-- Fixed popup modal for abstraction among error and success messages
-- Popup should prevent people from repeatedly submitting tasks
-- Completed form verification for add task section
-- Abstraction upon popup modal to accept positive and negative prompts
-- Started popup modal for confirmation of removal of tasks
-- Move sign out button to settings page
-
-### Bugs
-
-- Basic popup modal text is not centered beyond one line
-
-### Todo
-
-- Write deletion of tasks after confirmation from popup modal
-- Write logic for determining order of tasks
-- Previous tasks
-
-### Misc
-
-- User experience sucks for the add task section
-- Reconsider if personal or settings view should be first
-- Finishing the main focus view will result in minimium viable product
+- New file accounts for future features, while this file accounts for next steps
+- Aformentioned future features will remain in this file
 
 ## 0.0.5
 
@@ -122,73 +100,93 @@
 - Storing the initial state for hooks in a variable allows for easy erasure
 - Consdier the possibility of having optional parameters
 
-# 0.0.6
+## 0.0.4
 
-- Added potential features markdown file
-- Added lodash package for manipulation of arrays
+- Removed pose package
+- Fixed popup modal for abstraction among error and success messages
+- Popup should prevent people from repeatedly submitting tasks
+- Completed form verification for add task section
+- Abstraction upon popup modal to accept positive and negative prompts
+- Started popup modal for confirmation of removal of tasks
+- Move sign out button to settings page
 
 ### Bugs
 
-- Previous bugs
+- Basic popup modal text is not centered beyond one line
 
 ### Todo
 
-- Need to add a button to check in current times and energy
-- Add check at home page for energy level comparison to energy required
-- Have two lists of ordered, total, and completed tasks
-- Guarantee that force placement is denied unless time equals time difference
-- Add time cushioning setting
+- Write deletion of tasks after confirmation from popup modal
+- Write logic for determining order of tasks
+- Previous tasks
 
 ### Misc
 
-- Consider adding search functionality for searches in the future
-- Location feature is a possibility as well
-- Consider suggesting time cushioning
-- Consider adding a setting for dividing tasks into sections
+- User experience sucks for the add task section
+- Reconsider if personal or settings view should be first
+- Finishing the main focus view will result in minimium viable product
+
+## 0.0.3
+
+- Removed persistence settings due to redundance with default settings
+- Removed uuid package because Firebase offers keys
+- Added basic popup modal
+
+### Bugs
+
+- Basic popup modal text is not centered beyond one line
+- Basic popup modal has no exit button
+
+### Todo
+
+- Fix popup modal
+- Pass props through tab navigators
+- Previous tasks
+
+### Misc
+
 - Still trying to figure out how to pass props through tab navigators
-- New file accounts for future features, while this file accounts for next steps
-- Aformentioned future features will remain in this file
 
-# 0.0.7
+## 0.0.2
 
-- Added aditional logic to order function
-- Added capacity to configuration 
-
-### Bugs
-
-- Need to fix check for time from now in add task section for correct units
-- Previous bugs
-
-
-### Todo
-
-- Previous todos
- 
-### Misc 
-
-- Remmeber to differ between now and end time for a task to display finished
-- Progress has slown down due to trip to a new continent
-
-
-# 0.0.8
-
-- Added aditional logic to order function, which currently assumes perfect fit
-- Cleaned up conditional if statements with conditional ternary operators
-- Changed capacity in configuration to hours instead of minutes
+- Completed form verification system in logic directory
+- Functional but perhaps not optimal reading of Firestore tasks
+- Functional offline
+- Form for add task clears after sucessful submission
 
 ### Bugs
 
-- Need to review order function, which is currently broken
-- Previous bugs
+- Lacking complete form verification for add task section
 
 ### Todo
 
-- Create a helper function that reorders tasks with same level of priority
-- Add loading screens
-- Previous todos
- 
-### Misc 
+- Add section headers to the list
+- Add top tabs to main home page
+- Add details of each task to the list
+- Add functionality for editing and removing tasks in the list
+- Review list props specifically keys
+- Complete form verification for the add task section
+- Build general modal component for errors and confirmation
+- Start writing algorithm for task sorting
 
-- Moment is phenomenal with time operations
-- Cannot seem to use ternary operators with try catch exception handling
-- There are so many array methods
+### Misc
+
+- Fantastic that Firebase supports offline persistence
+
+## 0.0.1
+
+- Completed add task section for minimum viable product
+
+### Bugs
+
+- Currently you can click submit on the add task section multiple times in a row
+
+### Todo
+
+- Add form verification and erasure on completion for the add task section
+- Build general modal component for errors and confirmation
+- Start writing algorithm for task sorting
+
+### Misc
+
+- Rewriting highest component using hooks required too much repetitive code
