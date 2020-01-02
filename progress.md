@@ -1,4 +1,4 @@
-# 0.0.8
+## 0.0.8
 
 - Added aditional logic to order function, which currently assumes perfect fit
 - Cleaned up conditional if statements with conditional ternary operators
@@ -21,7 +21,7 @@
 - Cannot seem to use ternary operators with try catch exception handling
 - There are so many array methods
 
-# 0.0.7
+## 0.0.7
 
 - Added aditional logic to order function
 - Added capacity to configuration 
@@ -40,7 +40,7 @@
 - Remember to differ between now and end time for a task to display finished
 - Progress has slown down due to trip to a new continent
 
-# 0.0.6
+## 0.0.6
 
 - Added potential features markdown file
 - Added lodash package for manipulation of arrays
